@@ -32,12 +32,12 @@ char first_non_repeating_char(const string &str)
     // Using a map to count occurrences of each character
     unordered_map<char, int> char_count;
     // Counting occurrences of each character in the string
-    for (char c : str)
+    for (const char &c : str)
     {
         char_count[c]++;
     }
     // Finding the first non-repeating character
-    for (char c : str)
+    for (const char &c : str)
     {
         // If the character count is 1, return the address of the character
         if (char_count[c] == 1)

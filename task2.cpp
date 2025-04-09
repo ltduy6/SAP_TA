@@ -12,7 +12,7 @@ Output: {a=3, b=4, c=2}
 */
 
 #include <iostream>
-#include <map>
+#include <unordered_map>
 #include <string>
 
 using namespace std;
@@ -26,15 +26,15 @@ string s: The input string to count character occurrences.
 Returns:
 map<char, int>: A map where the key is the character and the value is the count of that character in the string.
 */
-map<char, int> count_occurences(const string &s)
+unordered_map<char, int> count_occurrences(const string &s)
 {
     // Using a map to count occurrences of each character
     // The key is the character, and the value is the count
-    map<char, int> char_count;
+    unordered_map<char, int> char_count;
 
     // Counting occurrences of each character in the string
     // The map will automatically handle the initialization of counts to 0
-    for (char c : s)
+    for (const char &c : s)
     {
         char_count[c]++;
     }
@@ -51,7 +51,7 @@ Space Complexity: O(1), since the size of the character set is constant (e.g., A
 int main()
 {
     string input1 = "sapstar";
-    map<char, int> result1 = count_occurences(input1);
+    unordered_map<char, int> result1 = count_occurrences(input1);
     cout << "Input: " << input1 << "\nOutput: ";
     for (const auto &pair : result1)
     {
@@ -60,7 +60,7 @@ int main()
     cout << endl;
 
     string input2 = "aaabbbbcc";
-    map<char, int> result2 = count_occurences(input2);
+    unordered_map<char, int> result2 = count_occurrences(input2);
     cout << "Input: " << input2 << "\nOutput: ";
     for (const auto &pair : result2)
     {
